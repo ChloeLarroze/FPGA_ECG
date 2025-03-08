@@ -1,0 +1,23 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/ascon_pack.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/Pc.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/Permutation.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/Pl.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/Ps.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/Sbox.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/ascon.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/compteur_double_init.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/fsm_moore.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/mux_state.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/register_w_en.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/state_register_w_en.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/xor_begin_perm.sv" \
+"../../../../FPGA.srcs/sources_1/imports/Downloads/xor_end_perm.sv" \
+"../../../../FPGA.srcs/sim_1/new/ascon_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

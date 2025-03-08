@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1741177971">
+  <File Type="PA-TCL" Name="ascon.tcl"/>
+  <File Type="REPORTS-TCL" Name="ascon_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ascon.vds"/>
+  <File Type="RDS-UTIL" Name="ascon_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="ascon_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="ascon.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/ascon_pack.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/ascon_pack.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Pc.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/Pc.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Permutation.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/Permutation.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Pl.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/Pl.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Ps.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/Ps.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Sbox.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/Sbox.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/compteur_double_init.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/compteur_double_init.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/fsm_moore.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/fsm_moore.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/mux_state.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/mux_state.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/register_w_en.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/register_w_en.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/state_register_w_en.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/state_register_w_en.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/xor_begin_perm.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/xor_begin_perm.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/xor_end_perm.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/xor_end_perm.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/ascon.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/eleves/Downloads/ascon.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ascon"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+    <Step Id="synth_design">
+      <Option Id="FlattenHierarchy">1</Option>
+    </Step>
+  </Strategy>
+</GenRun>

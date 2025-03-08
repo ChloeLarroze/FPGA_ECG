@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="ascon_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="ascon_pack" />
+            <top_module name="ascon_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="347.001 ns"></ZoomEndTime>
+      <Cursor1Time time="66.500 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="234"></NameColumnWidth>
+      <ValueColumnWidth column_width="103"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/ascon_tb/clock_i" type="logic">
+      <obj_property name="ElementShortName">clock_i</obj_property>
+      <obj_property name="ObjectShortName">clock_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/reset_i" type="logic">
+      <obj_property name="ElementShortName">reset_i</obj_property>
+      <obj_property name="ObjectShortName">reset_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/data_i" type="array">
+      <obj_property name="ElementShortName">data_i[63:0]</obj_property>
+      <obj_property name="ObjectShortName">data_i[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/data_valid_i" type="logic">
+      <obj_property name="ElementShortName">data_valid_i</obj_property>
+      <obj_property name="ObjectShortName">data_valid_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/key_i" type="array">
+      <obj_property name="ElementShortName">key_i[127:0]</obj_property>
+      <obj_property name="ObjectShortName">key_i[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/nonce_i" type="array">
+      <obj_property name="ElementShortName">nonce_i[127:0]</obj_property>
+      <obj_property name="ObjectShortName">nonce_i[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/init_i" type="logic">
+      <obj_property name="ElementShortName">init_i</obj_property>
+      <obj_property name="ObjectShortName">init_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/associate_data_i" type="logic">
+      <obj_property name="ElementShortName">associate_data_i</obj_property>
+      <obj_property name="ObjectShortName">associate_data_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/finalisation_i" type="logic">
+      <obj_property name="ElementShortName">finalisation_i</obj_property>
+      <obj_property name="ObjectShortName">finalisation_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/cipher_o" type="array">
+      <obj_property name="ElementShortName">cipher_o[63:0]</obj_property>
+      <obj_property name="ObjectShortName">cipher_o[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/cipher_valid_o" type="logic">
+      <obj_property name="ElementShortName">cipher_valid_o</obj_property>
+      <obj_property name="ObjectShortName">cipher_valid_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/tag_o" type="array">
+      <obj_property name="ElementShortName">tag_o[127:0]</obj_property>
+      <obj_property name="ObjectShortName">tag_o[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/end_tag_o" type="logic">
+      <obj_property name="ElementShortName">end_tag_o</obj_property>
+      <obj_property name="ObjectShortName">end_tag_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/end_initialisation_o" type="logic">
+      <obj_property name="ElementShortName">end_initialisation_o</obj_property>
+      <obj_property name="ObjectShortName">end_initialisation_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/end_cipher_o" type="logic">
+      <obj_property name="ElementShortName">end_cipher_o</obj_property>
+      <obj_property name="ObjectShortName">end_cipher_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/end_associate_o" type="logic">
+      <obj_property name="ElementShortName">end_associate_o</obj_property>
+      <obj_property name="ObjectShortName">end_associate_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ascon_tb/ecg_data" type="array">
+      <obj_property name="ElementShortName">ecg_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">ecg_data[63:0]</obj_property>
+   </wvobject>
+</wave_config>

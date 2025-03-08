@@ -1,0 +1,20 @@
+0.7
+2020.2
+May 22 2024
+19:03:11
+E:/FPGA/FPGA.sim/sim_1/behav/xsim/glbl.v,1708598508,verilog,,,,glbl,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sim_1/new/ascon_tb.sv,1741354462,systemVerilog,,,,ascon_tb,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pc.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Permutation.sv,,Pc,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Permutation.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pl.sv,,Permutation,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pl.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Ps.sv,,Pl,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Ps.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Sbox.sv,,Ps,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Sbox.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/ascon.sv,,sbox,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/ascon.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/compteur_double_init.sv,,ascon,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/ascon_pack.sv,1741005528,systemVerilog,E:/FPGA/FPGA.srcs/sim_1/new/ascon_tb.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pc.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Permutation.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pl.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Ps.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Sbox.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/ascon.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/compteur_double_init.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/fsm_moore.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/mux_state.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/register_w_en.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/state_register_w_en.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_begin_perm.sv;E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_end_perm.sv,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pc.sv,,$unit_ascon_pack_sv_4175059242;ascon_pack,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/compteur_double_init.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/fsm_moore.sv,,compteur_double_init,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/fsm_moore.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/mux_state.sv,,fsm_moore,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/mux_state.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/register_w_en.sv,,mux_state,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/register_w_en.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/state_register_w_en.sv,,register_w_en,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/state_register_w_en.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_begin_perm.sv,,state_register_w_en,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_begin_perm.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_end_perm.sv,,xor_begin_perm,,uvm,,,,,,
+E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_end_perm.sv,1741005528,systemVerilog,,E:/FPGA/FPGA.srcs/sim_1/new/ascon_tb.sv,,xor_end_perm,,uvm,,,,,,

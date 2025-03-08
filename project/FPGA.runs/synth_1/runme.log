@@ -1,0 +1,379 @@
+
+*** Running vivado
+    with args -log ascon.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ascon.tcl
+
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Wed Mar  5 13:32:55 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source ascon.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 491.914 ; gain = 203.008
+Command: synth_design -top ascon -part xc7z020clg400-1 -flatten_hierarchy none
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9720
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 949.859 ; gain = 451.969
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ascon' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/ascon.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'fsm_moore' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/fsm_moore.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'fsm_moore' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/fsm_moore.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'compteur_double_init' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/compteur_double_init.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'compteur_double_init' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/compteur_double_init.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'Permutation' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Permutation.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'mux_state' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/mux_state.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'mux_state' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/mux_state.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'xor_begin_perm' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_begin_perm.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'xor_begin_perm' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_begin_perm.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'register_w_en' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/register_w_en.sv:12]
+	Parameter nb_bits_g bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'register_w_en' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/register_w_en.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'Pc' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pc.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'Pc' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pc.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'Ps' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Ps.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'sbox' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Sbox.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'sbox' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Sbox.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Ps' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Ps.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Pl' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pl.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'Pl' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Pl.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'xor_end_perm' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_end_perm.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'xor_end_perm' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_end_perm.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'state_register_w_en' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/state_register_w_en.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'state_register_w_en' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/state_register_w_en.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'register_w_en__parameterized0' [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/register_w_en.sv:12]
+	Parameter nb_bits_g bound to: 128 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'register_w_en__parameterized0' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/register_w_en.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'Permutation' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/Permutation.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'ascon' (0#1) [E:/FPGA/FPGA.srcs/sources_1/imports/Downloads/ascon.sv:5]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1064.996 ; gain = 567.105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1064.996 ; gain = 567.105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1064.996 ; gain = 567.105
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-802] inferred FSM for state register 'Ep_reg' in module 'fsm_moore'
+INFO: [Device 21-9227] Part: xc7z020clg400-1 does not have CEAM library.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |       00000000000000000000000001 | 00000000000000000000000000000000
+               conf_init |       00000000000000000000000010 | 00000000000000000000000000000001
+              start_init |       00000000000000000000000100 | 00000000000000000000000000000010
+                    init |       00000000000000000000001000 | 00000000000000000000000000000011
+                end_init |       00000000000000000000010000 | 00000000000000000000000000000100
+               idle_next |       00000000000000000000100000 | 00000000000000000000000000000101
+                 conf_da |       00000000000000000001000000 | 00000000000000000000000000000111
+                start_da |       00000000000000000010000000 | 00000000000000000000000000001000
+                      da |       00000000000000000100000000 | 00000000000000000000000000001001
+                  end_da |       00000000000000001000000000 | 00000000000000000000000000001010
+                 idle_da |       00000000000000010000000000 | 00000000000000000000000000000110
+       conf_first_cipher |       00000000000000100000000000 | 00000000000000000000000000001011
+            first_cipher |       00000000000001000000000000 | 00000000000000000000000000001100
+             conf_cipher |       00000000000010000000000000 | 00000000000000000000000000001110
+            start_cipher |       00000000000100000000000000 | 00000000000000000000000000001111
+                cipherP0 |       00000000001000000000000000 | 00000000000000000000000000010000
+                  cipher |       00000000010000000000000000 | 00000000000000000000000000010001
+              end_cipher |       00000000100000000000000000 | 00000000000000000000000000010010
+             idle_cipher |       00000001000000000000000000 | 00000000000000000000000000001101
+                conf_tag |       00000010000000000000000000 | 00000000000000000000000000010011
+               start_tag |       00000100000000000000000000 | 00000000000000000000000000010100
+                   tagP0 |       00001000000000000000000000 | 00000000000000000000000000010101
+                     tag |       00010000000000000000000000 | 00000000000000000000000000010110
+                 end_tag |       00100000000000000000000000 | 00000000000000000000000000010111
+            wait_restart |       01000000000000000000000000 | 00000000000000000000000000011000
+            idle_restart |       10000000000000000000000000 | 00000000000000000000000000011001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'Ep_reg' using encoding 'one-hot' in module 'fsm_moore'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1064.996 ; gain = 567.105
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    4 Bit       Adders := 1     
++---XORs : 
+	   2 Input    128 Bit         XORs := 2     
+	   2 Input     64 Bit         XORs := 1     
+	   3 Input     64 Bit         XORs := 5     
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	              128 Bit    Registers := 1     
+	               64 Bit    Registers := 6     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input  128 Bit        Muxes := 2     
+	   2 Input   64 Bit        Muxes := 6     
+	  26 Input   26 Bit        Muxes := 1     
+	   2 Input   26 Bit        Muxes := 13    
+	   2 Input    4 Bit        Muxes := 2     
+	  26 Input    1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:29 . Memory (MB): peak = 1277.105 ; gain = 779.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
+|sbox        | sbox_o     | 32x5          | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 1278.008 ; gain = 780.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 1278.008 ; gain = 780.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1278.996 ; gain = 781.105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1278.996 ; gain = 781.105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1278.996 ; gain = 781.105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     6|
+|3     |LUT2 |    77|
+|4     |LUT3 |   910|
+|5     |LUT4 |   134|
+|6     |LUT5 |   199|
+|7     |LUT6 |     9|
+|8     |FDCE |   541|
+|9     |FDPE |     1|
+|10    |IBUF |   326|
+|11    |OBUF |   197|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------------------------------+------------------------------+------+
+|      |Instance                         |Module                        |Cells |
++------+---------------------------------+------------------------------+------+
+|1     |top                              |                              |  2401|
+|2     |  U0                             |fsm_moore                     |    63|
+|3     |  U2                             |compteur_double_init          |     9|
+|4     |  U3                             |Permutation                   |  1804|
+|5     |    mux_instance                 |mux_state                     |   320|
+|6     |    xor_begin                    |xor_begin_perm                |   193|
+|7     |    UCipher                      |register_w_en                 |    65|
+|8     |    Pc_instance                  |Pc                            |     8|
+|9     |    Ps_instance                  |Ps                            |   320|
+|10    |      \generate_sbox[0].sbox_u   |sbox__1                       |     5|
+|11    |      \generate_sbox[1].sbox_u   |sbox__2                       |     5|
+|12    |      \generate_sbox[2].sbox_u   |sbox__3                       |     5|
+|13    |      \generate_sbox[3].sbox_u   |sbox__4                       |     5|
+|14    |      \generate_sbox[4].sbox_u   |sbox__5                       |     5|
+|15    |      \generate_sbox[5].sbox_u   |sbox__6                       |     5|
+|16    |      \generate_sbox[6].sbox_u   |sbox__7                       |     5|
+|17    |      \generate_sbox[7].sbox_u   |sbox__8                       |     5|
+|18    |      \generate_sbox[8].sbox_u   |sbox__9                       |     5|
+|19    |      \generate_sbox[9].sbox_u   |sbox__10                      |     5|
+|20    |      \generate_sbox[10].sbox_u  |sbox__11                      |     5|
+|21    |      \generate_sbox[11].sbox_u  |sbox__12                      |     5|
+|22    |      \generate_sbox[12].sbox_u  |sbox__13                      |     5|
+|23    |      \generate_sbox[13].sbox_u  |sbox__14                      |     5|
+|24    |      \generate_sbox[14].sbox_u  |sbox__15                      |     5|
+|25    |      \generate_sbox[15].sbox_u  |sbox__16                      |     5|
+|26    |      \generate_sbox[16].sbox_u  |sbox__17                      |     5|
+|27    |      \generate_sbox[17].sbox_u  |sbox__18                      |     5|
+|28    |      \generate_sbox[18].sbox_u  |sbox__19                      |     5|
+|29    |      \generate_sbox[19].sbox_u  |sbox__20                      |     5|
+|30    |      \generate_sbox[20].sbox_u  |sbox__21                      |     5|
+|31    |      \generate_sbox[21].sbox_u  |sbox__22                      |     5|
+|32    |      \generate_sbox[22].sbox_u  |sbox__23                      |     5|
+|33    |      \generate_sbox[23].sbox_u  |sbox__24                      |     5|
+|34    |      \generate_sbox[24].sbox_u  |sbox__25                      |     5|
+|35    |      \generate_sbox[25].sbox_u  |sbox__26                      |     5|
+|36    |      \generate_sbox[26].sbox_u  |sbox__27                      |     5|
+|37    |      \generate_sbox[27].sbox_u  |sbox__28                      |     5|
+|38    |      \generate_sbox[28].sbox_u  |sbox__29                      |     5|
+|39    |      \generate_sbox[29].sbox_u  |sbox__30                      |     5|
+|40    |      \generate_sbox[30].sbox_u  |sbox__31                      |     5|
+|41    |      \generate_sbox[31].sbox_u  |sbox__32                      |     5|
+|42    |      \generate_sbox[32].sbox_u  |sbox__33                      |     5|
+|43    |      \generate_sbox[33].sbox_u  |sbox__34                      |     5|
+|44    |      \generate_sbox[34].sbox_u  |sbox__35                      |     5|
+|45    |      \generate_sbox[35].sbox_u  |sbox__36                      |     5|
+|46    |      \generate_sbox[36].sbox_u  |sbox__37                      |     5|
+|47    |      \generate_sbox[37].sbox_u  |sbox__38                      |     5|
+|48    |      \generate_sbox[38].sbox_u  |sbox__39                      |     5|
+|49    |      \generate_sbox[39].sbox_u  |sbox__40                      |     5|
+|50    |      \generate_sbox[40].sbox_u  |sbox__41                      |     5|
+|51    |      \generate_sbox[41].sbox_u  |sbox__42                      |     5|
+|52    |      \generate_sbox[42].sbox_u  |sbox__43                      |     5|
+|53    |      \generate_sbox[43].sbox_u  |sbox__44                      |     5|
+|54    |      \generate_sbox[44].sbox_u  |sbox__45                      |     5|
+|55    |      \generate_sbox[45].sbox_u  |sbox__46                      |     5|
+|56    |      \generate_sbox[46].sbox_u  |sbox__47                      |     5|
+|57    |      \generate_sbox[47].sbox_u  |sbox__48                      |     5|
+|58    |      \generate_sbox[48].sbox_u  |sbox__49                      |     5|
+|59    |      \generate_sbox[49].sbox_u  |sbox__50                      |     5|
+|60    |      \generate_sbox[50].sbox_u  |sbox__51                      |     5|
+|61    |      \generate_sbox[51].sbox_u  |sbox__52                      |     5|
+|62    |      \generate_sbox[52].sbox_u  |sbox__53                      |     5|
+|63    |      \generate_sbox[53].sbox_u  |sbox__54                      |     5|
+|64    |      \generate_sbox[54].sbox_u  |sbox__55                      |     5|
+|65    |      \generate_sbox[55].sbox_u  |sbox__56                      |     5|
+|66    |      \generate_sbox[56].sbox_u  |sbox__57                      |     5|
+|67    |      \generate_sbox[57].sbox_u  |sbox__58                      |     5|
+|68    |      \generate_sbox[58].sbox_u  |sbox__59                      |     5|
+|69    |      \generate_sbox[59].sbox_u  |sbox__60                      |     5|
+|70    |      \generate_sbox[60].sbox_u  |sbox__61                      |     5|
+|71    |      \generate_sbox[61].sbox_u  |sbox__62                      |     5|
+|72    |      \generate_sbox[62].sbox_u  |sbox__63                      |     5|
+|73    |      \generate_sbox[63].sbox_u  |sbox                          |     5|
+|74    |    Pl_instance                  |Pl                            |   320|
+|75    |    xor_end                      |xor_end_perm                  |   128|
+|76    |    state_register_instance      |state_register_w_en           |   321|
+|77    |    UTag                         |register_w_en__parameterized0 |   129|
++------+---------------------------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1278.996 ; gain = 781.105
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1278.996 ; gain = 781.105
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1278.996 ; gain = 781.105
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1292.152 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1402.098 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 98b1727f
+INFO: [Common 17-83] Releasing license: Synthesis
+41 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:38 . Memory (MB): peak = 1402.098 ; gain = 910.184
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.233 . Memory (MB): peak = 1402.098 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/FPGA/FPGA.runs/synth_1/ascon.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file ascon_utilization_synth.rpt -pb ascon_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  5 13:33:51 2025...
