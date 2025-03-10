@@ -114,7 +114,7 @@ initial begin
         if (cipher_valid_o)begin 
             $display("Cipher : %h", cipher_o);
             end  
-    end
+    end                                                                                           
     
     //on gère les 24 bits restants 
     data_i = ecg_data[22]; 
