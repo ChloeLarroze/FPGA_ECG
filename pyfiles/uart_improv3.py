@@ -9,14 +9,16 @@ class FPGA:
     """
     Class for UART communication with an FPGA.
     
-    Provides methods to interact with the PYNQ-Z2 using the CLI to send various commands.
+    This class provides methods to interact with an FPGA via a UART interface,
+    including reading and writing to memory, setting memory addresses, and 
+    displaying values on LEDs.
     """
     
     def __init__(self, port, baud_rate=115200, parity=serial.PARITY_NONE, 
                  stop_bits=serial.STOPBITS_ONE, timeout=1, log_level=logging.INFO,
                  log_file=None):
         """
-        Initializes the FPGA UART connection with specified parameters.
+        Initialize the FPGA UART connection with specified parameters.
         
         Args:
             port (str): Serial port name (e.g., 'COM3', '/dev/ttyUSB0')
@@ -43,7 +45,7 @@ class FPGA:
 
     def _setup_logging(self, log_level, log_file):
         """
-        Sets up the logging system with file and console handlers.
+        Set up the logging system with file and console handlers.
         
         Args:
             log_level (int): Logging level (e.g., logging.INFO, logging.DEBUG)
@@ -79,7 +81,7 @@ class FPGA:
 
     def open_instrument(self):
         """
-        Opens the UART connection to the FPGA.
+        Open the UART connection to the FPGA.
         
         Returns:
             bool: True if connection was successful, False otherwise
@@ -100,7 +102,7 @@ class FPGA:
 
     def close_instrument(self):
         """
-        Closes the UART connection to the FPGA.
+        Close the UART connection to the FPGA.
         """
         if self.uart and self.uart.is_open:
             self.uart.close()
@@ -110,13 +112,13 @@ class FPGA:
 
     def send_command(self, command):
         """
-        Sends a command to the FPGA and waits for a response.
+        Send a command to the FPGA and wait for a response.
         
         Args:
             command (str): Command to send
             
         Returns:
-            str: Response from the FPGA
+            bytes: Raw response from the FPGA
             
         Raises:
             ValueError: If command is not a string
@@ -144,15 +146,26 @@ class FPGA:
         # Wait for response
         time.sleep(0.1)
         
-        # Read response
-        response = self.uart.read_all().decode('latin-1').strip()
-        self.logger.debug(f"Received response: {response}")
+        # Read raw response
+        raw_response = self.uart.read_all()
         
-        return response
+        # For debug logging, show both raw bytes and decoded string
+        if raw_response:
+            hex_bytes = ' '.join([f'0x{b:02X}' for b in raw_response])
+            try:
+                str_repr = raw_response.decode('latin-1')
+                self.logger.debug(f"Received raw bytes: {hex_bytes}")
+                self.logger.debug(f"Decoded response: {str_repr}")
+            except Exception as e:
+                self.logger.debug(f"Received raw bytes: {hex_bytes} (decoding failed: {e})")
+        else:
+            self.logger.debug("Received empty response")
+        
+        return raw_response
 
     def set_memory_addr(self, addr):
         """
-        Sets the memory address on the FPGA.
+        Set the memory address on the FPGA.
         
         Args:
             addr (str or int): Memory address as hex string (e.g., '0x00') or integer
@@ -180,8 +193,10 @@ class FPGA:
         self.logger.info(f"Setting memory address to: {addr}")
         response = self.send_command(command)
         
-        if response != "OK":
-            error_msg = f"Unexpected response when setting address: {response}"
+        # Check for "OK" response
+        decoded_response = response.decode('latin-1').strip()
+        if decoded_response != "OK":
+            error_msg = f"Unexpected response when setting address: {decoded_response}"
             self.logger.error(error_msg)
             raise ValueError(error_msg)
         
@@ -190,7 +205,7 @@ class FPGA:
 
     def write_val_mem(self, value):
         """
-        Writes a value to the assigned memory address.
+        Write a value to the assigned memory address.
         
         Args:
             value (str or int): Value to write as hex string (e.g., '0xF5') or integer
@@ -218,8 +233,10 @@ class FPGA:
         self.logger.info(f"Writing value {value} to memory")
         response = self.send_command(command)
         
-        if response != "OK":
-            error_msg = f"Unexpected response when writing value: {response}"
+        # Check for "OK" response
+        decoded_response = response.decode('latin-1').strip()
+        if decoded_response != "OK":
+            error_msg = f"Unexpected response when writing value: {decoded_response}"
             self.logger.error(error_msg)
             raise ValueError(error_msg)
         
@@ -228,7 +245,7 @@ class FPGA:
 
     def display_mem_vals_leds(self):
         """
-        Displays the stored value on the FPGA LEDs.
+        Display the stored value on the FPGA LEDs.
         
         Returns:
             bool: True if operation was successful
@@ -241,8 +258,10 @@ class FPGA:
         self.logger.info("Displaying memory value on LEDs")
         response = self.send_command(command)
         
-        if response != "OK":
-            error_msg = f"Unexpected response when displaying on LEDs: {response}"
+        # Check for "OK" response
+        decoded_response = response.decode('latin-1').strip()
+        if decoded_response != "OK":
+            error_msg = f"Unexpected response when displaying on LEDs: {decoded_response}"
             self.logger.error(error_msg)
             raise ValueError(error_msg)
         
@@ -251,7 +270,7 @@ class FPGA:
 
     def read_mem_val(self):
         """
-        Reads the stored value from the assigned memory address.
+        Read the stored value from the assigned memory address.
         
         Returns:
             str: Value read from memory (hex string)
@@ -262,18 +281,28 @@ class FPGA:
         command = "R"
         
         self.logger.info("Reading value from memory")
-        response = self.send_command(command)
+        raw_response = self.send_command(command)
         
-        # Parse and validate response
-        if not response.startswith("0x") or not response.endswith(" OK"):
-            error_msg = f"Unexpected response format when reading memory: {response}"
+        # Analyze the raw bytes
+        if len(raw_response) < 2:
+            error_msg = f"Response too short: {raw_response}"
             self.logger.error(error_msg)
             raise ValueError(error_msg)
         
-        # Extract the value from the response
-        value = response.split()[0]
-        self.logger.info(f"Value {value} successfully read from memory")
-        return value
+        # Extract the first byte which should be the value
+        value_byte = raw_response[1]
+        
+        # Check if the rest of the response contains 'OK'
+        rest_of_response = raw_response[1:].decode('latin-1').strip()
+        if not rest_of_response.endswith("OK"):
+            error_msg = f"Unexpected response format: first byte = 0x{value_byte:02X}, rest = '{rest_of_response}'"
+            self.logger.error(error_msg)
+            raise ValueError(error_msg)
+        
+        # Format the value as a hex string
+        value_hex = f"0x{value_byte:02X}"
+        self.logger.info(f"Value {value_hex} successfully read from memory")
+        return value_hex
 
 
 def print_help():
@@ -282,14 +311,14 @@ def print_help():
     """
     print("\n===== FPGA UART Interface Help =====")
     print("Available commands:")
-    print("  addr <hex>     - Sets memory address (e.g., addr 0x00)")
-    print("  write <hex>    - Writes value to memory (e.g., write 0xF5)")
-    print("  read           - Reads value from current memory address")
-    print("  display        - Displays memory value on FPGA LEDs")
-    print("  test           - Runs a series of test read/write cycles")
-    print("  debug <on/off> - Turns debug logging on or off")
-    print("  help           - Shows this help message")
-    print("  exit           - Exits the program")
+    print("  addr <hex>     - Set memory address (e.g., addr 0x00)")
+    print("  write <hex>    - Write value to memory (e.g., write 0xF5)")
+    print("  read           - Read value from current memory address")
+    print("  display        - Display memory value on FPGA LEDs")
+    print("  test           - Run a series of test read/write cycles")
+    print("  debug <on/off> - Turn debug logging on or off")
+    print("  help           - Show this help message")
+    print("  exit           - Exit the program")
     print("====================================\n")
 
 
