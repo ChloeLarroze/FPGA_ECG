@@ -56,7 +56,7 @@ module inter_spartan
 
 
   assign clock_s = clock_i;
- 
+
 
   uart_core uart_core_0 (
       .clock_i(clock_s),
@@ -93,23 +93,23 @@ module inter_spartan
 
   //instance de ascon
   ascon ascon_0(
-   .clock_i(clock_s),
-   .reset_i(resetb_s),
-   .init_i(init_i),
-   .associate_data_i(associate_data_s),
-   .finalisation_i(finalisation_s),
+    .clock_i(clock_s),
+    .reset_i(resetb_s),
+    .init_i(init_i),
+    .associate_data_i(associate_data_s),
+    .finalisation_i(finalisation_s),
    .data_i(data_s), //jsp peut etre wave_s
-   .data_valid_i(data_valid_s),
-   .key_i(key_s),
-   .nonce_i(nonce_s),
+    .data_valid_i(data_valid_s),
+    .key_i(key_s),
+    .nonce_i(nonce_s),
     // outputs
-   .end_associate_o(end_associate_s),
-   .cipher_o(cipher_s),
-   .cipher_valid_o(cipher_valid_s),
-   .tag_o(tag_s),
-   .end_tag_o(end_tag_s),
-   .end_initialisation_o(end_initialisation_s),
-   .end_cipher_o(end_cipher_s)
+    .end_associate_o(end_associate_s),
+    .cipher_o(cipher_s),
+    .cipher_valid_o(cipher_valid_s),
+    .tag_o(tag_s),
+    .end_tag_o(end_tag_s),
+    .end_initialisation_o(end_initialisation_s),
+    .end_cipher_o(end_cipher_s)
   ); 
   
 //instanciate drive ascon here
@@ -141,8 +141,7 @@ module inter_spartan
 
  //counter to select the correct word from wavereceived and drive it to data_s 
  //(géré dans la ascon fsm, dispo en sortie de cette dernière)
- 
- 
+
  //wave_s concatenate ad and wave received
   assign wave_s[0]  = ad_s;
   assign wave_s[1]  = wave_received_s[1471:1408];

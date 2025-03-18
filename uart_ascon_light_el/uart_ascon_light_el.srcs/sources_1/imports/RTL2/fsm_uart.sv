@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+//todo ligne 1080 et des brouettes
+
 module fsm_uart
   import uart_pkg::*;
 (
@@ -77,23 +79,46 @@ module fsm_uart
     get_key0,
     get_key1,
     flush_key,
+
     init_nonce,  //nonce
     idle_nonce0,
     idle_nonce1,
     get_nonce0,
     get_nonce1,
     flush_nonce,
-    //add states to parse associate data 
-    
-    //add states to parse ecg wave
-    
+
+    //add states to parse associate data (meme mécanisme que pour le nonce ou le key) ----------
+    init_ad, 
+    idle_ad0,
+    idle_ad1,
+    get_ad0,
+    get_ad1,
+    flush_ad,
+
+    //add states to parse ecg wave ----------
+    init_wave, 
+    idle_wave0,
+    idle_wave1,
+    get_wave0,
+    get_wave1,
+    flush_wave,
+
     //start ascon cipher GO 
     start_ascon,
     wait_end_ascon,
-    //send the cipher result all the cipher wave
-    
-    //send the tag
-    
+
+    //send the cipher result all the cipher wave ----------
+    start_wave, 
+    wave, 
+    send_wave0, 
+    send_wave1,
+
+    //send the tag ----------
+    start_tag,
+    tag,
+    send_tag0,
+    send_tag1,
+
     starto,  //letter O
     sendo,
     startk,  //letter K
@@ -132,7 +157,7 @@ module fsm_uart
       .init_i(init_ad_s),
       .ad_o(Ad_o)
   );
- 
+
 //add register to stare the plain ECG wave
  wave_reg wave_reg_0 ( //key_reg
       .clock_i(clock_i),
@@ -155,7 +180,7 @@ module fsm_uart
 
 
 //add the register that send the tag
- tag_reg tag_reg_0 (
+  tag_reg tag_reg_0 (
       .clock_i(clock_i),
       .resetb_i(resetb_i),
       .tag_i(Tag_i),
@@ -206,12 +231,25 @@ module fsm_uart
         case (RxData_i)
           8'h4B:   etat_f = init_key;  //K
           8'h6B:   etat_f = init_key;  //k
-          //ascii code for associate data command
 
+          //ascii code for associate data command
           //ascii code for ecg wave command
+          //On ajoute les lettres manquantes A/a , W/w, C/c, T/t
+          8'h41:   etat_f = init_ad;  //A
+          8'h61:   etat_f = init_ad;  //a
+
+          8'h57:   etat_f = init_wave;  //W
+          8'h77:   etat_f = init_wave;  //w
+
+          8'h43:   etat_f = start_wave;  //C
+          8'h63:   etat_f = start_wave;  //c
+
+          8'h54:   etat_f = start_tag;  //T
+          8'h74:   etat_f = start_tag;  //t
 
           8'h4E:   etat_f = init_nonce;  //N
           8'h6E:   etat_f = init_nonce;  //n
+
           8'h47:   etat_f = start_ascon;  //G
           8'h67:   etat_f = start_ascon;  //g
 
@@ -220,6 +258,7 @@ module fsm_uart
       end else begin
         etat_f = idle_cmd;
       end
+
       // Write key
       init_key: etat_f = idle_key0;
       idle_key0:
@@ -241,6 +280,7 @@ module fsm_uart
         etat_f = idle_cmd;
       end
       flush_key: etat_f = starto;
+
       // Write nonce
       init_nonce: etat_f = idle_nonce0;
       idle_nonce0:
@@ -262,9 +302,50 @@ module fsm_uart
         etat_f = idle_cmd;
       end
       flush_nonce: etat_f = starto;
-      // Write ad
 
-      // Write wave
+      // Write ad  -----------
+      init_ad: etat_f = idle_ad0;
+      idle_ad0:
+      if (RXRdy_i == 1'b1) begin
+        etat_f = idle_ad1;
+      end else begin
+        etat_f = idle_ad0;
+      end
+      idle_ad1: etat_f = get_ad0;
+      get_ad0: etat_f = get_ad1;
+      get_ad1:
+      if (TxBusy_i == 1'b0) begin
+        if (cpt_s == 9'h1) begin
+          etat_f = flush_ad;
+        end else begin
+          etat_f = idle_ad0;
+        end
+      end else begin
+        etat_f = idle_cmd;
+      end
+      flush_ad: etat_f = starto;
+
+      // Write wave  -----------
+      init_wave: etat_f = idle_wave0;
+      idle_wave0:
+      if (RXRdy_i == 1'b1) begin
+        etat_f = idle_wave1;
+      end else begin
+        etat_f = idle_wave0;
+      end
+      idle_wave1: etat_f = get_wave0;
+      get_wave0: etat_f = get_wave1;
+      get_wave1:
+      if (TxBusy_i == 1'b0) begin
+        if (cpt_s == 64'h184) begin //compteur 184 pour les 1472 octets (1472/8 = 184)
+          etat_f = flush_wave;
+        end else begin
+          etat_f = idle_wave0;
+        end
+      end else begin
+        etat_f = idle_cmd;
+      end
+      flush_wave: etat_f = starto;
 
       //init Ascon
       start_ascon: etat_f = wait_end_ascon;
@@ -274,9 +355,47 @@ module fsm_uart
       end else begin
         etat_f = wait_end_ascon;
       end
-      //read cipher
 
-      //read tag
+      //read cipher (start wave)  -----------
+      start_wave: etat_f = wave;
+      wave: etat_f = send_wave0;
+      send_wave0:
+      if (TxBusy_i == 1'b0) begin
+        etat_f = send_wave1;
+      end else begin
+        etat_f = send_wave0;
+      end
+      send_wave1: //if TxBusy_i = 0 && cpt_s != 184 : back to "wave", otherwise, starto
+      if (TxBusy_i == 1'b0) begin
+        if (cpt_s == 64'h184) begin
+          etat_f = starto;
+        end else begin
+          etat_f = wave;
+        end
+      end else begin
+        etat_f = send_wave1;
+      end
+      
+
+      //read tag (start tag) (meme fonctionnement que pour le read cipher mais compteur à 16) -----------
+      start_tag: etat_f = tag;
+      tag: etat_f = send_tag0;
+      send_tag0:
+      if (TxBusy_i == 1'b0) begin
+        etat_f = send_tag1;
+      end else begin
+        etat_f = send_tag0;
+      end
+      send_tag1: 
+      if (TxBusy_i == 1'b0) begin
+        if (cpt_s == 9'h10) begin
+          etat_f = starto;
+        end else begin
+          etat_f = tag;
+        end
+      end else begin
+        etat_f = send_tag1;
+      end
 
       //Respond to commands
       starto: etat_f = sendo;
@@ -959,6 +1078,417 @@ module fsm_uart
         init_c184_s   = 1'b0;
         en_trans_s    = 1'b0;
       end
+
+      //on ajoute la logique combinatoire pour les nouveaux états ici 
+      // donnée associée ------------------
+      init_ad : begin 
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b1;//
+        en_ad_s       = 1'b1;//
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b1;//
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b1;//
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0;
+      end 
+
+      idle_ad0 : begin 
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b0;
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b1; //
+      end
+
+      idle_ad1 : begin
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b0;
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
+      get_ad0 : begin 
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = data_converted_s; //
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b1;//
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b0;
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
+      get_ad1 : begin
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b1; //
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
+      flush_ad : begin
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b0;
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end 
+
+      //wave ------------------
+      start_wave : begin
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b1;//
+        en_cipher_s   = 1'b1;//
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b1;//
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b1;//
+        en_trans_s    = 1'b0; 
+      end
+
+      wave : begin
+        TxByte_o      = cipher_reg_o_s;//
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b1;//
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b0;
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
+      send_wave0 : begin 
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b0;
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
+      send_wave1 : begin 
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b1;//
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b1;//
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
+      //cipher
+      start_tag : begin 
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b1;//
+        en_tag_s      = 1'b1;//
+        en_cpt_s      = 1'b1;//
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b1;//
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
+      tag : begin 
+        TxByte_o      = tag_reg_o_s;//
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b1;//
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b0;
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
+      send_tag0 : begin 
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b0;
+        en_cpt_s      = 1'b0;
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
+      send_tag1 : begin 
+        TxByte_o      = '0;
+        Start_ascon_o = 1'b0;
+        Load_o        = 1'b0;
+        key_reg_s     = '0;
+        init_key_s    = 1'b0;
+        en_key_s      = 1'b0;
+        nonce_reg_s   = '0;
+        init_nonce_s  = 1'b0;
+        en_nonce_s    = 1'b0;
+        ad_reg_s      = '0;
+        init_ad_s     = 1'b0;
+        en_ad_s       = 1'b0;
+        wave_reg_s    = '0;
+        init_wave_s   = 1'b0;
+        en_wave_s     = 1'b0;
+        init_cipher_s = 1'b0;
+        en_cipher_s   = 1'b0;
+        init_tag_s    = 1'b0;
+        en_tag_s      = 1'b1;//
+        en_cpt_s      = 1'b1;//
+        init_c8_s     = 1'b0;
+        init_c17_s    = 1'b0;
+        init_c16_s    = 1'b0;
+        init_c185_s   = 1'b0;
+        init_c184_s   = 1'b0;
+        en_trans_s    = 1'b0; 
+      end
+
       default: begin
         TxByte_o      = '0;
         Start_ascon_o = 1'b0;
