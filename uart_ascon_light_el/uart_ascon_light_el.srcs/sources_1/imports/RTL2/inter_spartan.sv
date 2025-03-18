@@ -117,7 +117,8 @@ module inter_spartan
 //inputs
     .clock_i(clock_s),
     .reset_i(resetb_s),
-    .init_o(init_i),
+    .init_o(init_cpt_mux_s), //
+    .en_o(en_reg_ascon_s),//
     .associate_data_o(associate_data_s),
     .finalisation_o(finalisation_s),
     .data_valid_o(data_valid_s),
@@ -126,6 +127,7 @@ module inter_spartan
     .nonce_o(nonce_s),
     .count_o(cpt_s),
 //outputs
+    .go_i(start_ascon_s),//
     .ecg_data_i(wave_s),    
     .cipher_valid_i(cipher_valid_s),
     .cipher_i(cipher_s), 

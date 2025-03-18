@@ -61,7 +61,7 @@ module fsm_uart
   logic init_c17_s;
   logic init_c16_s;
   logic init_c185_s;
-  logic init_c184_s;
+  logic init_c184_s; //W suivi de 183 T (tte la wave)
 
   //internal signals for trans_receive
   logic [7:0] data_converted_s;

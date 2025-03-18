@@ -1,7 +1,9 @@
 module ascon_fsm (
-//inputs
+
     input logic clock_i,
     input logic reset_i,
+    
+//inputs de ascon    
     output logic init_o,
     output logic associate_data_o,
     output logic finalisation_o,
@@ -10,8 +12,10 @@ module ascon_fsm (
     output logic [127:0] key_o,
     output logic [127:0] nonce_o,
     output logic count_o,
-//outputs
-    input  logic [63:0] ecg_data_i [0:22],    
+    output logic en_o,
+//outputs de ascon
+    input  logic [63:0] ecg_data_i [0:22],  
+    input logic go_i,  
     input logic cipher_valid_i,
     input logic [63:0] cipher_i, 
     input logic end_initialisation_i,
@@ -57,7 +61,9 @@ module ascon_fsm (
     //logique combinatoire
     always_comb begin
         etat_f = etat_p; //pour remplacer les else, on reste dans l'état présent par défaut si if par rempli
+        //valeurs par défaut 
         init_o = 0;
+        en_o = 0; 
         //associate_data_o = 0;
         finalisation_o = 0;
         data_valid_o = 0;
@@ -67,12 +73,12 @@ module ascon_fsm (
 
         case (etat_p)
             IDLE: begin
-                //counter = 0;  //réinit compteur
-                etat_f = INIT;
+                if (go_i)etat_f = INIT;
             end
 
             INIT: begin
                 init_o = 1;
+                en_o = 1; 
                 etat_f = WAIT_INIT;
             end//
 
@@ -94,6 +100,7 @@ module ascon_fsm (
             WAIT_ASSOCIATE: begin ///attend la fin du premier bloc de DA
                 data_valid_o = 0; 
                 associate_data_o = 0;
+                
                 etat_f = INIT_BLOCK; //if (end_associate_i) etat_f = INIT_BLOCK;
             end
 
@@ -123,7 +130,7 @@ module ascon_fsm (
             
             INTERMEDIATE_BLOCK: begin 
                 counter ++;
-                assign count_o = counter; //to check (see other placement)
+                en_o =1; // le cipher_valid_i vaut systématiquement 1 ici 
                 etat_f = PROCESS_BLOCKS;
             end
 
@@ -146,5 +153,6 @@ module ascon_fsm (
             end
         endcase
     end
-    //assign count_o = counter; //to check
+    //assign en_o = (cipher_valid_i || init_o); pas terrible, on préferera avoir des états stables 
+    assign count_o = counter; //to check (see other placement) // à déplaer fin 
 endmodule
