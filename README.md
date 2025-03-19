@@ -65,7 +65,8 @@ Une FSM contrôle le fonctionnement global du chiffrement. Elle est basée sur l
 ```systemverilog
 // Logique combinatoire
 always_comb begin
-    etat_f = etat_p; // Reste dans l'état présent par défaut````
+    etat_f = etat_p; // Reste dans l'état présent par défaut 
+```
 
 Nous validons ensuite la FSM avec un testbench (`fsm_ascon_tb.sv`), en comparant les chronogrammes obtenus, les chronogrammes du test bench doivent être identiques aux premiers.
 
