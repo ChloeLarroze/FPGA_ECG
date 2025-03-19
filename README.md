@@ -92,7 +92,9 @@ On va avoir besoin de définir de nouveaux états dans l’instance pour gérer 
 
 La FSM contrôle l'envoi du texte chiffré, octet par octet. Par ailleurs, du coté de la FSM ascon que nous venons de développer, il faut créer une nouvelle input que l’on relie à Go_s en sortie de la FSM Uart ainsi qu’un signal d’enable que nous passerons à l’état haut à chaque fois que le cipher est valide, afin d’activer l’envoi vers notre registre.  
 On a le schéma complet de la `fsm_uart` suivant : 
-![Algorigramme FSM UART](./images/graph-fsm_uart.drawio.svg)
+
+
+![Algorigramme FSM UART](./images/graph-fsm_uart.svg)
 
 
 
