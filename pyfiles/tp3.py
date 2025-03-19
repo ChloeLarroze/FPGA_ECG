@@ -338,7 +338,7 @@ class FPGA:
                 raise ValueError(error_msg)
         
         # Validate data length
-        if len(data) != 8:
+        if len(data) != 6:
             error_msg = f"Associated data must be 8 bytes before padding, got {len(data)} bytes"
             self.logger.error(error_msg)
             raise ValueError(error_msg)
@@ -499,7 +499,7 @@ class FPGA:
         if b"OK" not in remaining:
             self.logger.warning("Ciphertext response doesn't contain 'OK' confirmation")
         
-        self.logger.info(f"Retrieved ciphertext ({len(ciphertext)} bytes): {ciphertext[:10].hex().upper()}...")
+        self.logger.info(f"Retrieved ciphertext ({len(ciphertext)} bytes): {ciphertext.hex().upper()}")
         return ciphertext
 
     def encrypt_ecg_data(self, key, nonce, associated_data, ecg_data):
@@ -556,39 +556,8 @@ def interactive_mode(fpga):
                 
             elif cmd.lower() == 'help':
                 print_help()
-                
-            elif cmd.lower().startswith('addr '):
-                try:
-                    addr = cmd.split(' ')[1]
-                    fpga.set_memory_addr(addr)
-                except (IndexError, ValueError) as e:
-                    print(f"Error: {e}")
-                    print("Usage: addr 0xXX (e.g., addr 0x00)")
-                    
-            elif cmd.lower().startswith('write '):
-                try:
-                    value = cmd.split(' ')[1]
-                    fpga.write_val_mem(value)
-                except (IndexError, ValueError) as e:
-                    print(f"Error: {e}")
-                    print("Usage: write 0xXX (e.g., write 0xF5)")
-                    
-            elif cmd.lower() == 'read':
-                try:
-                    value = fpga.read_mem_val()
-                    print(f"Read value from memory: {value}")
-                except ValueError as e:
-                    print(f"Error: {e}")
-                    
-            elif cmd.lower() == 'display':
-                try:
-                    fpga.display_mem_vals_leds()
-                except ValueError as e:
-                    print(f"Error: {e}")
             
             # New ASCON commands
-            elif cmd.lower() == 'ascon-help':
-                print_ascon_help()
                 
             elif cmd.lower().startswith('key '):
                 try:
@@ -732,23 +701,6 @@ def interactive_mode(fpga):
 
 def print_help():
     """
-    Print help information for available commands.
-    """
-    print("\n===== FPGA UART Interface Help =====")
-    print("Available commands:")
-    print("  addr <hex>     - Set memory address (e.g., addr 0x00)")
-    print("  write <hex>    - Write value to memory (e.g., write 0xF5)")
-    print("  read           - Read value from current memory address")
-    print("  display        - Display memory value on FPGA LEDs")
-    print("  ascon-help     - Show ASCON encryption commands")
-    print("  debug on/off   - Turn debug logging on or off")
-    print("  help           - Show this help message")
-    print("  exit           - Exit the program")
-    print("====================================\n")
-
-
-def print_ascon_help():
-    """
     Print help information for ASCON encryption commands.
     """
     print("\n===== ASCON Encryption Commands =====")
@@ -761,7 +713,6 @@ def print_ascon_help():
     print("  ciphertext     - Retrieve encrypted data (181 bytes + padding)")
     print("  run-ascon      - Run complete encryption workflow interactively")
     print("======================================\n")
-
 
 if __name__ == '__main__':
     import argparse
