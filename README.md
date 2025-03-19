@@ -60,7 +60,7 @@ Une FSM contrôle le fonctionnement global du chiffrement. Elle est basée sur l
 
 ![Algorigramme FSM ASCON](./images/FSM_ASCON.png)
 
-> **Note** : La logique combinatoire et séquentielle n'est pas séparée dans le code, ce qui ne respecte pas strictement les normes FPGA. Pour éviter d'alourdir le code, nous avons utilisé une assignation par défaut de l'état :
+> **Note** : La logique combinatoire et séquentielle n'est pas séparée dans le code, ce qui ne respecte pas strictement les normes FPGA. Pour éviter d'alourdir le code, nous avons utilisé une assignation par défaut de l'état :>
 
 ```systemverilog
 // Logique combinatoire
