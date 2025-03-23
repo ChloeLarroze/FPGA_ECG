@@ -9,19 +9,18 @@ module ascon_fsm (
     output logic finalisation_o,
     output logic data_valid_o,
     output logic [63:0] data_o,
-    output logic [127:0] key_o,
-    output logic [127:0] nonce_o,
-    output logic count_o,
+//    output logic count_o,
     output logic en_o,
+    
 //outputs de ascon
     input  logic [63:0] ecg_data_i [0:22],  
     input logic go_i,  
     input logic cipher_valid_i,
-    input logic [63:0] cipher_i, 
+    //input logic [63:0] cipher_i, 
     input logic end_initialisation_i,
     input logic end_associate_i,
     input logic end_cipher_i,
-    input logic [127:0] tag_i,
+    //input logic [127:0] tag_i,
     input logic end_tag_i
 );
   
@@ -49,7 +48,7 @@ module ascon_fsm (
     always_ff @(posedge clock_i or posedge reset_i) begin
         if (reset_i) begin
             etat_p <= IDLE;
-            counter <= 0;
+            // counter <= 0;
         end else begin
             etat_p <= etat_f;
           //  if (etat_p == WAIT_BLOCK) begin
@@ -68,8 +67,8 @@ module ascon_fsm (
         finalisation_o = 0;
         data_valid_o = 0;
         //data_o = 64'h0; //valeur par défaut, on ne dois pas aller le chercher en principe 
-        key_o = 128'h8A55114D1CB6A9A2BE263D4D7AECAAFF;
-        nonce_o = 128'h4ED0ECB98C529B7C8CDDF37BCD0284A;
+        //key_o = 128'h8A55114D1CB6A9A2BE263D4D7AECAAFF;
+        //nonce_o = 128'h4ED0ECB98C529B7C8CDDF37BCD0284A;
 
         case (etat_p)
             IDLE: begin
@@ -79,6 +78,7 @@ module ascon_fsm (
             INIT: begin
                 init_o = 1;
                 en_o = 1; 
+                counter = 0;  //nouvelle réinitialisation pour les blocs de données
                 etat_f = WAIT_INIT;
             end//
 
@@ -88,7 +88,8 @@ module ascon_fsm (
 
             ASSOCIATE: begin
                 associate_data_o = 1;
-                data_o = 64'h4120746F20428000; //premier bloc de données associées
+                //data_o = 64'h4120746F20428000; //premier bloc de données associées
+                data_o = ecg_data_i[counter];
                 etat_f = PENDING;
             end
             
@@ -105,7 +106,6 @@ module ascon_fsm (
             end
 
             INIT_BLOCK: begin
-                counter = 0;  //nouvelle réinitialisation pour les blocs de données
                 if (end_associate_i)  etat_f = PROCESS_BLOCKS;
             end
 
@@ -148,11 +148,11 @@ module ascon_fsm (
 
             DONE: begin
                 //fin de la FSM, peut rester ici ou revenir à IDLE si besoin
-                $display("Cipher final :%h", cipher_i);
-                $display("Tag :%h", tag_i);
+                //$display("Cipher final :%h", cipher_i);
+                //$display("Tag :%h", tag_i);
             end
         endcase
     end
     //assign en_o = (cipher_valid_i || init_o); pas terrible, on préferera avoir des états stables 
-    assign count_o = counter; //to check (see other placement) // à déplaer fin 
+//    assign count_o = counter; //to check (see other placement) // à déplaer fin 
 endmodule
