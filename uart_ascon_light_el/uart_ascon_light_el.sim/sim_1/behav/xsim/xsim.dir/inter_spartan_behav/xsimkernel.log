@@ -1,0 +1,7 @@
+Running: xsim.dir/inter_spartan_behav/xsimk.exe -simmode gui -wdb inter_spartan_behav.wdb -simrunnum 0 -socket 62960
+Design successfully loaded
+Design Loading Memory Usage: 8784 KB (Peak: 8784 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 10392 KB (Peak: 10392 KB)
+Simulation CPU Usage: 15 ms

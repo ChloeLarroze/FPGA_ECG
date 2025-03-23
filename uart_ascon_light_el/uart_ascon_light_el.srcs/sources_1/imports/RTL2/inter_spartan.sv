@@ -20,6 +20,7 @@ module inter_spartan
   logic [NDBits-1:0] Dout_s;
   logic clock_s;
   logic resetb_s;
+  logic init_s;
 
   assign Baud_o   = ~Baud_i;
   assign resetb_s = ~reset_i;
@@ -28,14 +29,14 @@ module inter_spartan
   //internal signals for UART part
   logic [127:0] tag_s;
   logic [1471:0] wave_to_send_s;
-  logic cipherRdy_s;
+ // logic cipherRdy_s;
   logic [127:0] key_s;
   logic [127:0] nonce_s;
   logic [63:0] ad_s;
   logic [1471:0] wave_received_s;
   logic start_ascon_s;
-  logic init_cpt_mux_s;
-  logic en_cpt_mux_s;
+//  logic init_cpt_mux_s;
+//  logic en_cpt_mux_s;
   logic en_reg_ascon_s;
   logic cipher_valid_s;
   //internal signals for Ascon part
@@ -50,14 +51,27 @@ module inter_spartan
 
   //mux for injected data in ascon
   logic [63:0] data_s, cipher_s;
-  logic [4:0] cpt_s;  //cpt 5 bits
-  logic [0:23][63:0] wave_s;  //1472
+ // logic [4:0] cpt_s;  //cpt 5 bits
+  logic [63:0] wave_s [0:22];  //1472
   //logic [0:22][63:0] wave_o_s;  //1472+64 packed
 
 
-  assign clock_s = clock_i;
+ // assign clock_s = clock_i; //remplacé par le clock wizard
 
-
+ clk_wiz_0 clock_0
+  (
+  .clk_out1(clock_s),      
+  .reset(resetb_s), 
+  //.locked(locked),
+  .clk_in1(clock_i)
+  );
+  
+  ila_0 ila_instance (
+	.clk(clock_s), // input wire clk
+	.probe0(Dout_s), // input wire [7:0]  probe0  
+	.probe1(RXRdy_s) // input wire [0:0]  probe1
+);
+  
   uart_core uart_core_0 (
       .clock_i(clock_s),
       .resetb_i(resetb_s),
@@ -95,7 +109,7 @@ module inter_spartan
   ascon ascon_0(
     .clock_i(clock_s),
     .reset_i(resetb_s),
-    .init_i(init_i),
+    .init_i(init_s),
     .associate_data_i(associate_data_s),
     .finalisation_i(finalisation_s),
    .data_i(data_s), //jsp peut etre wave_s
@@ -117,24 +131,22 @@ module inter_spartan
 //inputs
     .clock_i(clock_s),
     .reset_i(resetb_s),
-    .init_o(init_cpt_mux_s), //
+    .init_o(init_s), //
     .en_o(en_reg_ascon_s),//
     .associate_data_o(associate_data_s),
     .finalisation_o(finalisation_s),
     .data_valid_o(data_valid_s),
     .data_o(data_s), //le truc en sortie à pas confondre //todo 
-    .key_o(key_s),
-    .nonce_o(nonce_s),
-    .count_o(cpt_s),
+//    .count_o(cpt_s),
 //outputs
     .go_i(start_ascon_s),//
     .ecg_data_i(wave_s),    
     .cipher_valid_i(cipher_valid_s),
-    .cipher_i(cipher_s), 
+    //.cipher_i(cipher_s), 
     .end_initialisation_i(end_initialisation_s),
     .end_associate_i(end_associate_s),
     .end_cipher_i(end_cipher_s),
-    .tag_i(tag_s),
+    //.tag_i(tag_s),
     .end_tag_i(end_tag_s)
 );
   
@@ -170,7 +182,7 @@ module inter_spartan
 
   
 //  
-  assign data_s     = wave_s[cpt_s];
+  // assign data_s     = wave_s[cpt_s];
 
 //register to store cipher result 8 bytes
   ascon_reg u_ascon_reg (
@@ -180,7 +192,7 @@ module inter_spartan
       //asynchronous reset active low
       .data_i  (cipher_s),
       .en_i    (en_reg_ascon_s),
-      .init_i  (init_cpt_mux_s),
+      .init_i  (init_s),
       //wave register storing 8 bytes by the right hand side. (23*64bits)
       .wave_o  (wave_to_send_s)   //wave_o_s
   );

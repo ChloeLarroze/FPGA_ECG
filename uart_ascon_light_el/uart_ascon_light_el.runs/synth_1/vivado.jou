@@ -1,13 +1,24 @@
 #-----------------------------------------------------------
-# Vivado v2022.2 (64-bit)
-# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
-# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Thu Jan 23 10:00:19 2025
-# Process ID: 8828
-# Current directory: D:/formation_2025/digital_design/uart_ascon/uart_ascon.runs/synth_1
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Fri Mar 21 18:23:08 2025
+# Process ID: 18392
+# Current directory: E:/uart_ascon_light_el/uart_ascon_light_el.runs/synth_1
 # Command line: vivado.exe -log inter_spartan.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source inter_spartan.tcl
-# Log file: D:/formation_2025/digital_design/uart_ascon/uart_ascon.runs/synth_1/inter_spartan.vds
-# Journal file: D:/formation_2025/digital_design/uart_ascon/uart_ascon.runs/synth_1\vivado.jou
-# Running On: gcp-pcp-rigaud, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 2, Host memory: 16550 MB
+# Log file: E:/uart_ascon_light_el/uart_ascon_light_el.runs/synth_1/inter_spartan.vds
+# Journal file: E:/uart_ascon_light_el/uart_ascon_light_el.runs/synth_1\vivado.jou
+# Running On        :GCP-E105-24
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19045
+# Processor Detail  :12th Gen Intel(R) Core(TM) i5-12500
+# CPU Frequency     :2995 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :16363 MB
+# Swap memory       :16642 MB
+# Total Virtual     :33006 MB
+# Available Virtual :24028 MB
 #-----------------------------------------------------------
 source inter_spartan.tcl -notrace

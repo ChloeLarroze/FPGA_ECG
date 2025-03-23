@@ -1,0 +1,110 @@
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot inter_spartan_behav xil_defaultlib.inter_spartan xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 1 for port 'count_o' [E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/inter_spartan.sv:143]
+WARNING: [VRFC 10-3823] variable 'data_s' might have multiple concurrent drivers [E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/inter_spartan.sv:188]
+WARNING: [VRFC 10-3705] select index 23 into 'wave_s' is out of bounds [E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/inter_spartan.sv:184]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/inter_spartan.sv" Line 3. Module inter_spartan has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" Line 65. Module clk_wiz_0 has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" Line 65. Module clk_wiz_0_clk_wiz has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/proj/rdi/data/CLs/5074560/data/verilog/src/unisims/IBUF.v" Line 29. Module IBUF has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/proj/rdi/data/CLs/5074560/data/verilog/src/unisims/MMCME2_ADV.v" Line 123. Module MMCME2_ADV(CLKFBOUT_MULT_F=8.0,CLKIN1_PERIOD=8.0,CLKOUT0_DIVIDE_F=20.0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/proj/rdi/data/CLs/5074560/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/proj/rdi/data/CLs/5074560/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/ila_0/sim/ila_0.v" Line 49. Module ila_0 has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/uart_core.sv" Line 3. Module uart_core has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/baud_generator.sv" Line 1. Module baud_generator has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/transmit.sv" Line 3. Module transmit has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/txbit_dcounter.sv" Line 3. Module txbit_dcounter has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/tx_reg.sv" Line 3. Module tx_reg has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/reg_sel.sv" Line 3. Module reg_sel has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/receive.sv" Line 3. Module receive has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/rx_reg.sv" Line 3. Module rx_reg has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/rxbit_dcounter.sv" Line 3. Module rxbit_dcounter has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/reg_sel.sv" Line 3. Module reg_sel has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/fsm_uart.sv" Line 5. Module fsm_uart has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/key_reg.sv" Line 3. Module key_reg has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/nonce_reg.sv" Line 3. Module nonce_reg has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/ad_reg.sv" Line 3. Module ad_reg has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/wave_reg.sv" Line 3. Module wave_reg has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/cipher_reg.sv" Line 3. Module cipher_reg has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/tag_reg.sv" Line 3. Module tag_reg has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/fsm_dcounter.sv" Line 3. Module fsm_dcounter has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/trans_receive.sv" Line 3. Module trans_receive has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/ascon.sv" Line 5. Module ascon has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/fsm_moore.sv" Line 4. Module fsm_moore has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/compteur_double_init.sv" Line 12. Module compteur_double_init has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/mux_state.sv" Line 12. Module mux_state has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/xor_begin_perm.sv" Line 12. Module xor_begin_perm has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/register_w_en.sv" Line 12. Module register_w_en(nb_bits_g=64) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/xor_end_perm.sv" Line 12. Module xor_end_perm has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/state_register_w_en.sv" Line 12. Module state_register_w_en has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/register_w_en.sv" Line 12. Module register_w_en(nb_bits_g=128) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/new/fsm_ascon.sv" Line 1. Module ascon_fsm has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/ascon_reg.sv" Line 3. Module ascon_reg has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/inter_spartan.sv" Line 3. Module inter_spartan has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" Line 65. Module clk_wiz_0 has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" Line 65. Module clk_wiz_0_clk_wiz has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/proj/rdi/data/CLs/5074560/data/verilog/src/unisims/IBUF.v" Line 29. Module IBUF has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/proj/rdi/data/CLs/5074560/data/verilog/src/unisims/MMCME2_ADV.v" Line 123. Module MMCME2_ADV(CLKFBOUT_MULT_F=8.0,CLKIN1_PERIOD=8.0,CLKOUT0_DIVIDE_F=20.0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/proj/rdi/data/CLs/5074560/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/proj/rdi/data/CLs/5074560/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/ila_0/sim/ila_0.v" Line 49. Module ila_0 has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/uart_core.sv" Line 3. Module uart_core has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/baud_generator.sv" Line 1. Module baud_generator has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/transmit.sv" Line 3. Module transmit has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/txbit_dcounter.sv" Line 3. Module txbit_dcounter has a timescale but at least one module in design doesn't have timescale.
+INFO: [Common 17-14] Message 'XSIM 43-4100' appears 50 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.uart_pkg
+Compiling package xil_defaultlib.ascon_pack
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.ila_0
+Compiling module xil_defaultlib.baud_generator
+Compiling module xil_defaultlib.txbit_dcounter
+Compiling module xil_defaultlib.tx_reg
+Compiling module xil_defaultlib.reg_sel
+Compiling module xil_defaultlib.transmit
+Compiling module xil_defaultlib.rx_reg
+Compiling module xil_defaultlib.rxbit_dcounter
+Compiling module xil_defaultlib.receive
+Compiling module xil_defaultlib.uart_core
+Compiling module xil_defaultlib.key_reg
+Compiling module xil_defaultlib.nonce_reg
+Compiling module xil_defaultlib.ad_reg
+Compiling module xil_defaultlib.wave_reg
+Compiling module xil_defaultlib.cipher_reg
+Compiling module xil_defaultlib.tag_reg
+Compiling module xil_defaultlib.fsm_dcounter
+Compiling module xil_defaultlib.trans_receive
+Compiling module xil_defaultlib.fsm_uart
+Compiling module xil_defaultlib.fsm_moore
+Compiling module xil_defaultlib.compteur_double_init
+Compiling module xil_defaultlib.mux_state
+Compiling module xil_defaultlib.xor_begin_perm
+Compiling module xil_defaultlib.register_w_en(nb_bits_g=64)
+Compiling module xil_defaultlib.Pc
+Compiling module xil_defaultlib.sbox
+Compiling module xil_defaultlib.Ps_default
+Compiling module xil_defaultlib.Pl
+Compiling module xil_defaultlib.xor_end_perm
+Compiling module xil_defaultlib.state_register_w_en
+Compiling module xil_defaultlib.register_w_en(nb_bits_g=128)
+Compiling module xil_defaultlib.Permutation
+Compiling module xil_defaultlib.ascon
+Compiling module xil_defaultlib.ascon_fsm
+Compiling module xil_defaultlib.ascon_reg
+Compiling module xil_defaultlib.inter_spartan
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot inter_spartan_behav

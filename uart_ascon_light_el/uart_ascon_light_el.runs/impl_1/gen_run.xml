@@ -1,79 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1737622813">
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1742577786">
   <File Type="ROUTE-PWR" Name="inter_spartan_power_routed.rpt"/>
   <File Type="PA-TCL" Name="inter_spartan.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="inter_spartan_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="inter_spartan_reports.tcl"/>
-  <File Type="BITSTR-MSK" Name="inter_spartan.msk"/>
-  <File Type="ROUTE-CLK" Name="inter_spartan_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="inter_spartan.vdi"/>
-  <File Type="BG-BIT" Name="inter_spartan.bit"/>
-  <File Type="BG-DRC" Name="inter_spartan.drc"/>
-  <File Type="BG-BGN" Name="inter_spartan.bgn"/>
-  <File Type="BG-BIN" Name="inter_spartan.bin"/>
-  <File Type="BITSTR-RBT" Name="inter_spartan.rbt"/>
-  <File Type="BITSTR-NKY" Name="inter_spartan.nky"/>
-  <File Type="BITSTR-BMM" Name="inter_spartan_bd.bmm"/>
+  <File Type="OPT-RQA-PB" Name="inter_spartan_rqa_opted.pb"/>
   <File Type="BITSTR-MMI" Name="inter_spartan.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="inter_spartan_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-SYSDEF" Name="inter_spartan.sysdef"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="inter_spartan_methodology_drc_routed.pb"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="inter_spartan.ltx"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="NPI_FILE" Name="inter_spartan.npi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="inter_spartan_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="inter_spartan_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="inter_spartan_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="inter_spartan_opt.dcp"/>
   <File Type="OPT-DRC" Name="inter_spartan_drc_opted.rpt"/>
-  <File Type="RBD_FILE" Name="inter_spartan.rbd"/>
   <File Type="OPT-HWDEF" Name="inter_spartan.hwdef"/>
+  <File Type="PWROPT-DCP" Name="inter_spartan_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="inter_spartan_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="inter_spartan_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="inter_spartan_placed.dcp"/>
   <File Type="PLACE-IO" Name="inter_spartan_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="inter_spartan_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="inter_spartan_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="inter_spartan_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="inter_spartan_control_sets_placed.rpt"/>
-  <File Type="ROUTE-RQS" Name="inter_spartan_routed.rqs"/>
+  <File Type="PLACE-SIMILARITY" Name="inter_spartan_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="inter_spartan_incremental_reuse_pre_placed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="inter_spartan_postroute_physopted.rqs"/>
-  <File Type="ROUTE-DRC" Name="inter_spartan_drc_routed.rpt"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="inter_spartan_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="inter_spartan.bin"/>
+  <File Type="PLACE-TIMING" Name="inter_spartan_timing_summary_placed.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="inter_spartan_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="inter_spartan_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="inter_spartan_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="inter_spartan.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="inter_spartan_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="inter_spartan_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="inter_spartan_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="inter_spartan.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="inter_spartan_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="inter_spartan_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="inter_spartan_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="inter_spartan_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="inter_spartan_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="inter_spartan_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="inter_spartan_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="inter_spartan_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="inter_spartan_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="inter_spartan_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="inter_spartan_rqs_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="inter_spartan_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="inter_spartan_route_status.pb"/>
-  <File Type="ROUTE-DCP" Name="inter_spartan_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="inter_spartan_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="inter_spartan_routed_bb.dcp"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="inter_spartan_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="inter_spartan_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="inter_spartan_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="inter_spartan_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="inter_spartan_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="inter_spartan_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="inter_spartan_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="inter_spartan_bus_skew_routed.rpx"/>
-  <File Type="OPT-DCP" Name="inter_spartan_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="inter_spartan_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="inter_spartan_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="inter_spartan_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="inter_spartan_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="inter_spartan_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="inter_spartan_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-DRC-RPX" Name="inter_spartan_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="inter_spartan_methodology_drc_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="inter_spartan_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="inter_spartan_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="inter_spartan_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="inter_spartan_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="inter_spartan.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="inter_spartan_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="inter_spartan_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="inter_spartan.nky"/>
+  <File Type="BITSTR-BMM" Name="inter_spartan_bd.bmm"/>
   <File Type="PDI-FILE" Name="inter_spartan.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="inter_spartan_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="inter_spartan_pld.pdi"/>
   <File Type="RCFI_FILE" Name="inter_spartan.rcfi"/>
   <File Type="CFI_FILE" Name="inter_spartan.cfi"/>
   <File Type="RNPI_FILE" Name="inter_spartan.rnpi"/>
-  <File Type="ROUTE-SIMILARITY" Name="inter_spartan_incremental_reuse_routed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="inter_spartan_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="inter_spartan_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="inter_spartan_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="inter_spartan_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="inter_spartan_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="inter_spartan_bus_skew_postroute_physopted.pb"/>
+  <File Type="NPI_FILE" Name="inter_spartan.npi"/>
+  <File Type="RBD_FILE" Name="inter_spartan.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="inter_spartan.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="inter_spartan.sysdef"/>
+  <File Type="BG-BGN" Name="inter_spartan.bgn"/>
+  <File Type="BG-DRC" Name="inter_spartan.drc"/>
+  <File Type="RDI-RDI" Name="inter_spartan.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="inter_spartan_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="inter_spartan_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+    <File Path="$PSRCDIR/sources_1/ip/ila_0_2/ila_0.xci">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../uart_test/uart_test.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci"/>
-        <Attr Name="ImportTime" Val="1736000009"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -88,46 +102,46 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/Pc.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/Pc.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/Pc.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/Pc.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/Permutation.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/Permutation.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/Permutation.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/Permutation.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/Pl.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/Pl.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/Pl.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/Pl.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/Ps.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/Ps.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/Ps.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/Ps.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/Sbox.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/Sbox.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/Sbox.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/Sbox.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -151,10 +165,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/ascon.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/ascon.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/ascon.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/ascon.sv"/>
+        <Attr Name="ImportTime" Val="1741358190"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -187,28 +201,19 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/compteur_double_init.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/compteur_double_init.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/compteur_double_init.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/compteur_double_init.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/compteur_simple_init.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/new/fsm_ascon.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/compteur_simple_init.sv"/>
-        <Attr Name="ImportTime" Val="1736947003"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/drive_ascon.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/drive_ascon.sv"/>
-        <Attr Name="ImportTime" Val="1736949062"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/new/fsm_ascon.sv"/>
+        <Attr Name="ImportTime" Val="1741624434"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -223,10 +228,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/fsm_moore.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/fsm_moore.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/fsm_moore.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/fsm_moore.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -250,10 +255,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/mux_state.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/mux_state.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/mux_state.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/mux_state.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -286,10 +291,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/register_w_en.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/register_w_en.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/register_w_en.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/register_w_en.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -313,10 +318,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/state_register_w_en.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/state_register_w_en.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/state_register_w_en.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/state_register_w_en.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -385,19 +390,19 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/xor_begin_perm.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/xor_begin_perm.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/xor_begin_perm.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_begin_perm.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/xor_end_perm.sv">
+    <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/Downloads/xor_end_perm.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/xor_end_perm.sv"/>
-        <Attr Name="ImportTime" Val="1736931313"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA/FPGA.srcs/sources_1/imports/Downloads/xor_end_perm.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -412,25 +417,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RTL2/drived_ascon.sv">
-      <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fromvenelles/cmp_12_01_25/digital_design/EI24/SRC/RTL2/drived_ascon.sv"/>
-        <Attr Name="ImportTime" Val="1736951437"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="inter_spartan"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
-    <Filter Type="Constrs"/>
-    <File Path="$PSRCDIR/constrs_1/imports/new/uart_test.xdc">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_2" RelGenDir="$PGENDIR/constrs_2">
+    <File Path="$PSRCDIR/constrs_2/imports/new/uart_test.xdc">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../uart_test/uart_test.srcs/constrs_1/new/uart_test.xdc"/>
         <Attr Name="ImportTime" Val="1736237352"/>
@@ -439,10 +433,11 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_2/imports/new/uart_test.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
-  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
     <File Path="$PSRCDIR/utils_1/imports/synth_1/inter_spartan.dcp">
       <FileInfo>
@@ -451,6 +446,7 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>
@@ -469,6 +465,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
 </GenRun>

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/formation_2025/digital_design/uart_ascon/uart_ascon.runs/synth_1/inter_spartan.tcl"
+  variable script "E:/uart_ascon_light_el/uart_ascon_light_el.runs/synth_1/inter_spartan.tcl"
   variable category "vivado_synth"
 }
 
@@ -55,27 +55,7 @@ if {$::dispatch::connected} {
   }
 }
 
-proc create_report { reportName command } {
-  set status "."
-  append status $reportName ".fail"
-  if { [file exists $status] } {
-    eval file delete [glob $status]
-  }
-  send_msg_id runtcl-4 info "Executing : $command"
-  set retval [eval catch { $command } msg]
-  if { $retval != 0 } {
-    set fp [open $status w]
-    close $fp
-    send_msg_id runtcl-5 warning "$msg"
-  }
-}
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param chipscope.maxJobs 1
-set_param synth.incrementalSynthesisCache C:/Users/rigaud/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-13928-gcp-pcp-rigaud/incrSyn
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -83,60 +63,65 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir D:/formation_2025/digital_design/uart_ascon/uart_ascon.cache/wt [current_project]
-set_property parent.project_path D:/formation_2025/digital_design/uart_ascon/uart_ascon.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property webtalk.parent_dir E:/uart_ascon_light_el/uart_ascon_light_el.cache/wt [current_project]
+set_property parent.project_path E:/uart_ascon_light_el/uart_ascon_light_el.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part_repo_paths {C:/Users/rigaud/AppData/Roaming/Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store} [current_project]
+set_property board_part_repo_paths {C:/Users/eleves/AppData/Roaming/Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_output_repo d:/formation_2025/digital_design/uart_ascon/uart_ascon.cache/ip [current_project]
+set_property ip_output_repo e:/uart_ascon_light_el/uart_ascon_light_el.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/ascon_pack.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/Pc.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/Permutation.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/Pl.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/Ps.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/Sbox.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/uart_pkg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/ad_reg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/ascon.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/ascon_reg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/baud_generator.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/cipher_reg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/compteur_double_init.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/compteur_simple_init.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/drive_ascon.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/fsm_dcounter.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/fsm_moore.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/fsm_uart.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/key_reg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/mux_state.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/nonce_reg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/receive.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/reg_sel.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/register_w_en.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/rx_reg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/rxbit_dcounter.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/state_register_w_en.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/tag_reg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/trans_receive.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/transmit.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/tx_reg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/txbit_dcounter.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/uart_core.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/wave_reg.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/xor_begin_perm.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/xor_end_perm.sv
-  D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/imports/RTL2/inter_spartan.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/ascon_pack.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Pc.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Permutation.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Pl.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Ps.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Sbox.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/uart_pkg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/ad_reg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/ascon.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/ascon_reg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/baud_generator.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/cipher_reg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/compteur_double_init.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/new/fsm_ascon.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/fsm_dcounter.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/fsm_moore.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/fsm_uart.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/key_reg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/mux_state.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/nonce_reg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/receive.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/reg_sel.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/register_w_en.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/rx_reg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/rxbit_dcounter.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/state_register_w_en.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/tag_reg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/trans_receive.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/transmit.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/tx_reg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/txbit_dcounter.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/uart_core.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/wave_reg.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/xor_begin_perm.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/xor_end_perm.sv
+  E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/inter_spartan.sv
 }
-read_ip -quiet D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all d:/formation_2025/digital_design/uart_ascon/uart_ascon.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all d:/formation_2025/digital_design/uart_ascon/uart_ascon.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all d:/formation_2025/digital_design/uart_ascon/uart_ascon.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet e:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/ip/ila_0_2/ila_0.xci
+set_property used_in_synthesis false [get_files -all e:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/ila_0_2/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/ila_0_2/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/ila_0_2/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all e:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/ila_0_2/ila_0_ooc.xdc]
+
+read_ip -quiet E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all e:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all e:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all e:/uart_ascon_light_el/uart_ascon_light_el.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -147,14 +132,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/constrs_1/imports/new/uart_test.xdc
-set_property used_in_implementation false [get_files D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/constrs_1/imports/new/uart_test.xdc]
+read_xdc E:/uart_ascon_light_el/uart_ascon_light_el.srcs/constrs_2/imports/new/uart_test.xdc
+set_property used_in_implementation false [get_files E:/uart_ascon_light_el/uart_ascon_light_el.srcs/constrs_2/imports/new/uart_test.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental D:/formation_2025/digital_design/uart_ascon/uart_ascon.srcs/utils_1/imports/synth_1/inter_spartan.dcp
+read_checkpoint -auto_incremental -incremental E:/uart_ascon_light_el/uart_ascon_light_el.srcs/utils_1/imports/synth_1/inter_spartan.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
@@ -171,7 +156,7 @@ set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef inter_spartan.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file inter_spartan_utilization_synth.rpt -pb inter_spartan_utilization_synth.pb"
+generate_parallel_reports -reports { "report_utilization -file inter_spartan_utilization_synth.rpt -pb inter_spartan_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
