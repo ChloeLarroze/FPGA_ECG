@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1742924229">
+  <File Type="ROUTE-PWR" Name="inter_spartan_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="inter_spartan.tcl"/>
+  <File Type="BITSTR-MMI" Name="inter_spartan.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="inter_spartan_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="inter_spartan_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="inter_spartan_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="inter_spartan_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="inter_spartan_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="inter_spartan_opt.dcp"/>
+  <File Type="OPT-DRC" Name="inter_spartan_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="inter_spartan.hwdef"/>
+  <File Type="PWROPT-DCP" Name="inter_spartan_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="inter_spartan_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="inter_spartan_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="inter_spartan_placed.dcp"/>
+  <File Type="PLACE-IO" Name="inter_spartan_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="inter_spartan_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="inter_spartan_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="inter_spartan_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="inter_spartan_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="inter_spartan_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="inter_spartan_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="inter_spartan.bin"/>
+  <File Type="PLACE-TIMING" Name="inter_spartan_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="inter_spartan_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="inter_spartan.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="inter_spartan_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="inter_spartan_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="inter_spartan_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="inter_spartan.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="inter_spartan_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="inter_spartan_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="inter_spartan_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="inter_spartan_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="inter_spartan_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="inter_spartan_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="inter_spartan_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="inter_spartan_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="inter_spartan_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="inter_spartan_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="inter_spartan_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="inter_spartan_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="inter_spartan_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="inter_spartan_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="inter_spartan_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="inter_spartan_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="inter_spartan_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="inter_spartan_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="inter_spartan_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="inter_spartan_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="inter_spartan_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="inter_spartan_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="inter_spartan_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="inter_spartan_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="inter_spartan_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="inter_spartan_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="inter_spartan_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="inter_spartan.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="inter_spartan_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="inter_spartan_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="inter_spartan.nky"/>
+  <File Type="BITSTR-BMM" Name="inter_spartan_bd.bmm"/>
+  <File Type="PDI-FILE" Name="inter_spartan.pdi"/>
+  <File Type="RCFI_FILE" Name="inter_spartan.rcfi"/>
+  <File Type="CFI_FILE" Name="inter_spartan.cfi"/>
+  <File Type="RNPI_FILE" Name="inter_spartan.rnpi"/>
+  <File Type="NPI_FILE" Name="inter_spartan.npi"/>
+  <File Type="RBD_FILE" Name="inter_spartan.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="inter_spartan.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="inter_spartan.sysdef"/>
+  <File Type="BG-BGN" Name="inter_spartan.bgn"/>
+  <File Type="BG-DRC" Name="inter_spartan.drc"/>
+  <File Type="RDI-RDI" Name="inter_spartan.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="inter_spartan_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="inter_spartan_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/ascon_pack.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/ascon_pack.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Pc.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Pc.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Permutation.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Permutation.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Pl.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Pl.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Ps.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Ps.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/Sbox.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/Sbox.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/uart_pkg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/uart_pkg.sv"/>
+        <Attr Name="ImportTime" Val="1737469722"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/ad_reg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/ad_reg.sv"/>
+        <Attr Name="ImportTime" Val="1737547522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/ascon.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/ascon.sv"/>
+        <Attr Name="ImportTime" Val="1741358190"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/ascon_reg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/ascon_reg.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/baud_generator.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/baud_generator.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/cipher_reg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/cipher_reg.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/compteur_double_init.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/compteur_double_init.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/fsm_ascon.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/new/fsm_ascon.sv"/>
+        <Attr Name="ImportTime" Val="1742907094"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/fsm_dcounter.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/fsm_dcounter.sv"/>
+        <Attr Name="ImportTime" Val="1741775714"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/fsm_moore.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/fsm_moore.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/fsm_uart.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/fsm_uart.sv"/>
+        <Attr Name="ImportTime" Val="1742329321"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/key_reg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/key_reg.sv"/>
+        <Attr Name="ImportTime" Val="1737542716"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/mux_state.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/mux_state.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/nonce_reg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/nonce_reg.sv"/>
+        <Attr Name="ImportTime" Val="1737547524"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/receive.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/receive.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/reg_sel.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/reg_sel.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/register_w_en.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/register_w_en.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/rx_reg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/rx_reg.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/rxbit_dcounter.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/rxbit_dcounter.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/state_register_w_en.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/state_register_w_en.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/tag_reg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/tag_reg.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/trans_receive.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/trans_receive.sv"/>
+        <Attr Name="ImportTime" Val="1741513482"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/transmit.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/transmit.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/tx_reg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/tx_reg.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/txbit_dcounter.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/txbit_dcounter.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/uart_core.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/uart_core.sv"/>
+        <Attr Name="ImportTime" Val="1737467906"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/wave_reg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/wave_reg.sv"/>
+        <Attr Name="ImportTime" Val="1737547664"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/xor_begin_perm.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/xor_begin_perm.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/xor_end_perm.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/sources_1/imports/Downloads/xor_end_perm.sv"/>
+        <Attr Name="ImportTime" Val="1741005528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL2/inter_spartan.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="E:/uart_ascon_light_el/uart_ascon_light_el.srcs/sources_1/imports/RTL2/inter_spartan.sv"/>
+        <Attr Name="ImportTime" Val="1742825588"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="inter_spartan"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/new/uart_test.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Desktop/constrs_1/imports/new/uart_test.xdc"/>
+        <Attr Name="ImportTime" Val="1737621154"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/inter_spartan.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
+</GenRun>
